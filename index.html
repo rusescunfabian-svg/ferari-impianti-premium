@@ -370,10 +370,10 @@
       transform: scale(1.05);
       box-shadow: 0 0 28px rgba(245, 184, 0, 0.55);
     }
-    .hero-content > .trust-row {
+    .hero-content > .hero-mini-stats {
       opacity: 0;
     }
-    body.show-site .hero-content > .trust-row {
+    body.show-site .hero-content > .hero-mini-stats {
       animation: fade-up-hero 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.58s forwards;
     }
 
@@ -435,25 +435,111 @@
       background: rgba(255, 255, 255, 0.1);
       border-color: rgba(255, 255, 255, 0.35);
     }
-    .trust-row {
+    /* 3 contatori nel hero: 24/24, comuni, clienti (mobile-first) */
+    .hero-mini-stats {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-      gap: 1rem;
-      max-width: 520px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.4rem;
+      width: 100%;
+      max-width: 100%;
     }
-    .trust-pill {
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: var(--radius);
-      padding: 0.85rem 1rem;
+    @media (min-width: 380px) {
+      .hero-mini-stats {
+        gap: 0.5rem;
+        max-width: 460px;
+      }
     }
-    .trust-pill strong {
-      display: block;
+    @media (min-width: 640px) {
+      .hero-mini-stats {
+        gap: 0.65rem;
+        max-width: 520px;
+      }
+    }
+    .hero-mini-stat {
+      position: relative;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 14px;
+      padding: 0.6rem 0.28rem 0.55rem;
+      text-align: center;
+      min-height: 5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    }
+    @media (min-width: 400px) {
+      .hero-mini-stat {
+        padding: 0.75rem 0.45rem 0.75rem;
+        min-height: 5.5rem;
+      }
+    }
+    .hero-mini-stat::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--blue), var(--amber));
+    }
+    .hero-mini-value {
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+      gap: 0.06em;
       font-family: "Outfit", sans-serif;
-      font-size: 1.1rem;
-      color: var(--white);
+      font-size: clamp(1rem, 3.9vw, 1.55rem);
+      font-weight: 800;
+      line-height: 1;
+      color: var(--amber);
+      font-variant-numeric: tabular-nums;
+      letter-spacing: -0.02em;
+      margin: 0 0 0.3rem;
     }
-    .trust-pill span { font-size: 0.8rem; color: rgba(255, 255, 255, 0.7); }
+    .hero-mini-suffix {
+      font-size: 0.52em;
+      font-weight: 800;
+      color: var(--amber);
+      opacity: 0.92;
+      line-height: 1;
+    }
+    .hero-mini-value--split {
+      gap: 0.02em;
+    }
+    .hero-mini-value--split .hero-mini-slash {
+      color: rgba(255, 255, 255, 0.48);
+      font-size: 0.52em;
+      font-weight: 700;
+      line-height: 1;
+      align-self: baseline;
+    }
+    .hero-mini-label {
+      margin: 0;
+      font-size: clamp(0.58rem, 2.4vw, 0.7rem);
+      font-weight: 700;
+      line-height: 1.25;
+      color: rgba(255, 255, 255, 0.92);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      hyphens: auto;
+    }
+    .hero-mini-hint {
+      margin: 0.2rem 0 0;
+      font-size: 0.55rem;
+      color: rgba(255, 255, 255, 0.55);
+      line-height: 1.2;
+      font-weight: 500;
+    }
+    @media (min-width: 400px) {
+      .hero-mini-hint {
+        font-size: 0.6rem;
+      }
+    }
 
     section {
       padding: 4.5rem 1.25rem;
@@ -861,7 +947,7 @@
       .hero-content > h1,
       .hero-content > .hero-lead,
       .hero-content > .hero-actions,
-      .hero-content > .trust-row {
+      .hero-content > .hero-mini-stats {
         animation: none !important;
         opacity: 1 !important;
         transform: none !important;
@@ -1009,18 +1095,25 @@
           </a>
           <a class="btn btn-ghost" href="https://wa.me/393926322720" target="_blank" rel="noopener noreferrer">WhatsApp</a>
         </div>
-        <div class="trust-row">
-          <div class="trust-pill">
-            <strong>24/7</strong>
-            <span>Anche notte e festivi</span>
+        <div class="hero-mini-stats" id="heroMiniStats" aria-label="Disponibilità, territorio e clienti">
+          <div class="hero-mini-stat" title="Reperibilità h24, tutti i giorni inclusi festivi">
+            <p class="hero-mini-value hero-mini-value--split" aria-label="Ventiquattro ore su ventiquattro">
+              <span class="hero-stat-num" data-count="24">0</span><span class="hero-mini-slash">/</span><span class="hero-stat-num" data-count="24">0</span>
+            </p>
+            <p class="hero-mini-label">H24 attivi</p>
+            <p class="hero-mini-hint">anche festivi</p>
           </div>
-          <div class="trust-pill">
-            <strong>Emilia</strong>
-            <span>Modena · Bologna · provincia</span>
+          <div class="hero-mini-stat" title="Somma dei comuni amministrativi ISTAT: provincia di Modena (75) + provincia di Bologna (55)">
+            <p class="hero-mini-value"><span class="hero-stat-num" data-count="130">0</span></p>
+            <p class="hero-mini-label">Comuni coperti</p>
+            <p class="hero-mini-hint">Modena + Bologna</p>
           </div>
-          <div class="trust-pill">
-            <strong>Sicurezza</strong>
-            <span>Interventi a norma</span>
+          <div class="hero-mini-stat" title="Stima storica: famiglie e attività che si sono affidate a noi nel tempo">
+            <p class="hero-mini-value">
+              <span class="hero-stat-num" data-count="1500">0</span><span class="hero-mini-suffix" aria-hidden="true">+</span>
+            </p>
+            <p class="hero-mini-label">Clienti felici</p>
+            <p class="hero-mini-hint">★ soddisfatti del lavoro</p>
           </div>
         </div>
       </div>
@@ -1320,6 +1413,76 @@
         );
         revealNodes.forEach(function (el) { io.observe(el); });
       }
+    })();
+
+    (function statCounters() {
+      var section = document.getElementById("heroMiniStats");
+      if (!section) return;
+
+      var nodes = section.querySelectorAll(".hero-stat-num[data-count]");
+      var ran = false;
+
+      function easeOutQuad(t) {
+        return 1 - (1 - t) * (1 - t);
+      }
+
+      function animateEl(el, target, duration, delay, done) {
+        if (duration <= 0) {
+          el.textContent = String(target);
+          if (done) done();
+          return;
+        }
+        var start = null;
+        function step(ts) {
+          if (start === null) start = ts;
+          var elapsed = ts - start - delay;
+          if (elapsed < 0) {
+            requestAnimationFrame(step);
+            return;
+          }
+          var p = Math.min(1, elapsed / duration);
+          var val = Math.round(easeOutQuad(p) * target);
+          el.textContent = String(val);
+          if (p < 1) requestAnimationFrame(step);
+          else {
+            el.textContent = String(target);
+            if (done) done();
+          }
+        }
+        requestAnimationFrame(step);
+      }
+
+      function run() {
+        if (ran) return;
+        ran = true;
+        var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        var dur = reduce ? 0 : 2200;
+        var stagger = reduce ? 0 : 100;
+        var i = 0;
+        nodes.forEach(function (el) {
+          var target = parseInt(el.getAttribute("data-count"), 10);
+          if (isNaN(target)) target = 0;
+          animateEl(el, target, dur, i * stagger, null);
+          i += 1;
+        });
+      }
+
+      if (!("IntersectionObserver" in window)) {
+        run();
+        return;
+      }
+      var io = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              run();
+              io.disconnect();
+            }
+          });
+        },
+        { threshold: 0.12, rootMargin: "0px 0px -5% 0px" }
+      );
+      io.observe(section);
     })();
   </script>
 </body>
