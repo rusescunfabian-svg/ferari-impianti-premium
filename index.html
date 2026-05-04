@@ -1,0 +1,1326 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ferari Impianti | Pronto intervento elettrico e idraulico 24/7 — Modena &amp; Bologna</title>
+  <meta name="description" content="Elettricista e idraulico h24 per emergenze a Modena, Bologna e provincia. Interventi rapidi, tecnici qualificati, sempre reperibili anche nei festivi. Chiama il 392 632 2720.">
+  <meta name="keywords" content="elettricista 24 ore, idraulico urgente, pronto intervento Modena, pronto intervento Bologna, Ferari Impianti">
+  <meta property="og:title" content="Ferari Impianti — Emergenze elettriche e idrauliche 24/7">
+  <meta property="og:description" content="Servizio di pronto intervento in Emilia-Romagna. Una chiamata, un tecnico sul posto.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="it_IT">
+  <link rel="icon" href="img/logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #0a0f1a;
+      --ink-soft: #121a2b;
+      --surface: #f4f6fb;
+      --muted: #5c6578;
+      --line: rgba(255, 255, 255, 0.08);
+      --blue: #1d6bff;
+      --blue-deep: #1248c7;
+      --amber: #f5b800;
+      --amber-soft: #fff4cc;
+      --white: #ffffff;
+      --success: #0d9f6e;
+      --radius: 14px;
+      --shadow: 0 18px 50px rgba(10, 15, 26, 0.12);
+      --shadow-sm: 0 8px 24px rgba(10, 15, 26, 0.08);
+      --max: 1160px;
+      --header-h: 76px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "DM Sans", system-ui, sans-serif;
+      font-size: 17px;
+      line-height: 1.55;
+      color: var(--ink);
+      background: var(--surface);
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; }
+
+    .skip {
+      position: absolute;
+      left: -999px;
+      top: 8px;
+      background: var(--white);
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      z-index: 9999;
+    }
+    .skip:focus { left: 8px; outline: 2px solid var(--blue); }
+
+    /* Emergency strip */
+    .emergency-strip {
+      background: linear-gradient(90deg, var(--ink) 0%, #1a2540 100%);
+      color: rgba(255, 255, 255, 0.92);
+      font-size: 0.8125rem;
+      text-align: center;
+      padding: 0.45rem 1rem;
+      letter-spacing: 0.02em;
+    }
+    .emergency-strip strong { color: var(--amber); font-weight: 600; }
+    .emergency-strip a {
+      color: var(--white);
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+    }
+    .emergency-strip a:hover { border-bottom-color: var(--amber); color: var(--amber); }
+    body.show-site .emergency-strip {
+      animation: strip-fade-in 0.5s ease 0.15s both;
+    }
+    @keyframes strip-fade-in {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Header */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: var(--header-h);
+      background: rgba(10, 15, 26, 0.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+      transition: box-shadow 0.25s ease;
+    }
+    body.show-site .site-header {
+      animation: header-slide-in 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+    .site-header.is-scrolled { box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25); }
+    @keyframes header-slide-in {
+      from { opacity: 0; transform: translateY(-100%); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .header-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 1.25rem;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: var(--white);
+    }
+    .brand img { height: 48px; width: auto; }
+    .brand-text { display: flex; flex-direction: column; line-height: 1.1; }
+    .brand-text span:first-child {
+      font-family: "Outfit", sans-serif;
+      font-weight: 800;
+      font-size: 1.15rem;
+      letter-spacing: 0.04em;
+      color: var(--amber);
+    }
+    .brand-text span:last-child {
+      font-size: 0.7rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      opacity: 0.85;
+    }
+
+    .nav-desktop {
+      display: none;
+      align-items: center;
+      gap: 2rem;
+    }
+    @media (min-width: 900px) {
+      .nav-desktop { display: flex; }
+    }
+    .nav-desktop a {
+      color: rgba(255, 255, 255, 0.88);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      position: relative;
+    }
+    .nav-desktop a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 0;
+      height: 2px;
+      background: var(--amber);
+      transition: width 0.2s ease;
+    }
+    .nav-desktop a:hover::after,
+    .nav-desktop a:focus-visible::after { width: 100%; }
+    .nav-desktop a:hover,
+    .nav-desktop a:focus-visible { color: var(--white); }
+
+    .header-cta {
+      display: none;
+      align-items: center;
+      gap: 0.65rem;
+    }
+    @media (min-width: 900px) {
+      .header-cta { display: flex; }
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.65rem 1.15rem;
+      border-radius: 10px;
+      font-family: inherit;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.2s ease, background 0.2s;
+    }
+    .btn:active { transform: scale(0.98); }
+    .btn-primary {
+      background: var(--amber);
+      color: var(--ink);
+      box-shadow: 0 4px 14px rgba(245, 184, 0, 0.35);
+    }
+    .btn-primary:hover { background: #ffd54a; box-shadow: 0 6px 20px rgba(245, 184, 0, 0.45); }
+    .btn-ghost {
+      background: transparent;
+      color: var(--white);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+    }
+    .btn-ghost:hover { background: rgba(255, 255, 255, 0.08); border-color: rgba(255, 255, 255, 0.4); }
+    .btn-block { width: 100%; }
+
+    .social-mini {
+      display: flex;
+      gap: 0.35rem;
+    }
+    .social-mini a {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: var(--white);
+      background: rgba(255, 255, 255, 0.08);
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+    }
+    .social-mini a:hover { background: var(--amber); color: var(--ink); }
+
+    .menu-toggle {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.06);
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      color: var(--white);
+    }
+    @media (min-width: 900px) {
+      .menu-toggle { display: none; }
+    }
+    .menu-toggle svg { width: 22px; height: 22px; }
+
+    .mobile-drawer {
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      pointer-events: none;
+      visibility: hidden;
+    }
+    .mobile-drawer.is-open {
+      pointer-events: auto;
+      visibility: visible;
+    }
+    .mobile-drawer-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+    .mobile-drawer.is-open .mobile-drawer-backdrop { opacity: 1; }
+    .mobile-panel {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: min(320px, 88vw);
+      height: 100%;
+      background: var(--ink-soft);
+      padding: 1.25rem;
+      transform: translateX(100%);
+      transition: transform 0.28s ease;
+      border-left: 1px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    .mobile-drawer.is-open .mobile-panel { transform: translateX(0); }
+    .mobile-nav a {
+      display: block;
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.65rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .mobile-nav a:last-child { border-bottom: none; }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      min-height: min(92vh, 820px);
+      display: flex;
+      align-items: flex-end;
+      color: var(--white);
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+    }
+    body.show-site .hero-bg {
+      animation: hero-bg-in 1.1s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+    @keyframes hero-bg-in {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.08);
+    }
+    body.show-site .hero-bg img {
+      animation: hero-kenburns 1.35s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+    @keyframes hero-kenburns {
+      to { transform: scale(1); }
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(105deg, rgba(10, 15, 26, 0.92) 0%, rgba(10, 15, 26, 0.55) 45%, rgba(10, 15, 26, 0.35) 100%);
+    }
+    body.show-site .hero-overlay {
+      animation: hero-overlay-in 0.9s ease 0.2s both;
+    }
+    @keyframes hero-overlay-in {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 3.5rem 1.25rem 4rem;
+      width: 100%;
+    }
+    @keyframes fade-up-hero {
+      from { opacity: 0; transform: translateY(28px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .hero-content > .hero-badge {
+      opacity: 0;
+    }
+    body.show-site .hero-content > .hero-badge {
+      animation: fade-up-hero 0.75s cubic-bezier(0.22, 1, 0.36, 1) 0.12s forwards;
+    }
+    .hero-content > h1 {
+      opacity: 0;
+    }
+    body.show-site .hero-content > h1 {
+      animation: fade-up-hero 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.22s forwards;
+    }
+    .hero-content > .hero-lead {
+      opacity: 0;
+    }
+    body.show-site .hero-content > .hero-lead {
+      animation: fade-up-hero 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.34s forwards;
+    }
+    .hero-content > .hero-actions {
+      opacity: 0;
+    }
+    body.show-site .hero-content > .hero-actions {
+      animation: fade-up-hero 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.46s forwards;
+    }
+    .hero-content > .hero-actions .btn-primary {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .hero-content > .hero-actions .btn-primary:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 28px rgba(245, 184, 0, 0.55);
+    }
+    .hero-content > .trust-row {
+      opacity: 0;
+    }
+    body.show-site .hero-content > .trust-row {
+      animation: fade-up-hero 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.58s forwards;
+    }
+
+    /* Scroll reveal (come il sito originale / Framer-style) */
+    .reveal-on-scroll {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1), transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal-on-scroll.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-stagger > *:nth-child(1) { transition-delay: 0.05s; }
+    .reveal-stagger > *:nth-child(2) { transition-delay: 0.12s; }
+    .reveal-stagger > *:nth-child(3) { transition-delay: 0.19s; }
+    .reveal-stagger > *:nth-child(4) { transition-delay: 0.26s; }
+    .reveal-stagger > *:nth-child(5) { transition-delay: 0.33s; }
+    .reveal-stagger > *:nth-child(6) { transition-delay: 0.4s; }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(245, 184, 0, 0.15);
+      border: 1px solid rgba(245, 184, 0, 0.35);
+      color: var(--amber);
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.4rem 0.85rem;
+      border-radius: 999px;
+      margin-bottom: 1.25rem;
+    }
+    .hero h1 {
+      font-family: "Outfit", sans-serif;
+      font-size: clamp(2rem, 5vw, 3.35rem);
+      font-weight: 800;
+      line-height: 1.08;
+      margin: 0 0 1rem;
+      max-width: 15ch;
+    }
+    .hero h1 .hl-e { color: #7eb8ff; }
+    .hero h1 .hl-p { color: var(--amber); }
+    .hero-lead {
+      font-size: 1.1rem;
+      max-width: 36rem;
+      color: rgba(255, 255, 255, 0.88);
+      margin: 0 0 1.75rem;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+    .hero-actions .btn-primary { padding: 0.85rem 1.35rem; font-size: 1rem; }
+    .hero-actions .btn-ghost {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.35);
+    }
+    .trust-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1rem;
+      max-width: 520px;
+    }
+    .trust-pill {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius);
+      padding: 0.85rem 1rem;
+    }
+    .trust-pill strong {
+      display: block;
+      font-family: "Outfit", sans-serif;
+      font-size: 1.1rem;
+      color: var(--white);
+    }
+    .trust-pill span { font-size: 0.8rem; color: rgba(255, 255, 255, 0.7); }
+
+    section {
+      padding: 4.5rem 1.25rem;
+    }
+    .section-head {
+      max-width: var(--max);
+      margin: 0 auto 2.75rem;
+      text-align: center;
+    }
+    .section-kicker {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--blue);
+      margin: 0 0 0.5rem;
+    }
+    .section-head h2 {
+      font-family: "Outfit", sans-serif;
+      font-size: clamp(1.75rem, 3.5vw, 2.35rem);
+      font-weight: 700;
+      margin: 0 0 0.65rem;
+      line-height: 1.15;
+    }
+    .section-head p {
+      margin: 0 auto;
+      max-width: 560px;
+      color: var(--muted);
+    }
+
+    .container {
+      max-width: var(--max);
+      margin: 0 auto;
+    }
+
+    .grid-3 {
+      display: grid;
+      gap: 1.25rem;
+    }
+    @media (min-width: 720px) {
+      .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    .card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(10, 15, 26, 0.06);
+      height: 100%;
+      transition: transform 0.2s ease, box-shadow 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
+    }
+    .card-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(29, 107, 255, 0.12), rgba(245, 184, 0, 0.15));
+      display: grid;
+      place-items: center;
+      margin-bottom: 1rem;
+      color: var(--blue-deep);
+      transition: box-shadow 0.35s ease;
+    }
+    .card:hover .card-icon {
+      box-shadow: 0 0 22px rgba(29, 107, 255, 0.45);
+    }
+    .card h3 {
+      font-family: "Outfit", sans-serif;
+      font-size: 1.15rem;
+      margin: 0 0 0.5rem;
+    }
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .section-alt { background: var(--white); }
+
+    .process {
+      display: grid;
+      gap: 1.5rem;
+    }
+    @media (min-width: 768px) {
+      .process { grid-template-columns: repeat(3, 1fr); }
+    }
+    .step {
+      text-align: center;
+      padding: 1.5rem;
+    }
+    .step-num {
+      width: 40px;
+      height: 40px;
+      margin: 0 auto 1rem;
+      border-radius: 50%;
+      background: var(--ink);
+      color: var(--amber);
+      font-family: "Outfit", sans-serif;
+      font-weight: 700;
+      display: grid;
+      place-items: center;
+    }
+    .step h3 { font-family: "Outfit", sans-serif; margin: 0 0 0.4rem; }
+    .step p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+
+    .reviews {
+      display: grid;
+      gap: 1.25rem;
+    }
+    @media (min-width: 768px) {
+      .reviews { grid-template-columns: repeat(2, 1fr); }
+    }
+    .review {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(10, 15, 26, 0.06);
+    }
+    .stars { color: var(--amber); letter-spacing: 2px; margin-bottom: 0.75rem; font-size: 1rem; }
+    .review blockquote {
+      margin: 0 0 1rem;
+      font-style: italic;
+      color: var(--ink-soft);
+    }
+    .review cite {
+      font-style: normal;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--muted);
+    }
+    .review-cta-wrap { text-align: center; margin-top: 2rem; }
+
+    .areas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 0.85rem;
+    }
+    .area-chip {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 1rem;
+      text-align: center;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: 1px solid rgba(10, 15, 26, 0.08);
+      box-shadow: var(--shadow-sm);
+      transition: background 0.2s, color 0.2s;
+    }
+    .area-chip:hover {
+      background: var(--blue);
+      color: var(--white);
+    }
+
+    .map-wrap {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      height: 380px;
+      border: 1px solid rgba(10, 15, 26, 0.08);
+    }
+    .map-wrap iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .faq-item {
+      background: var(--white);
+      border-radius: 12px;
+      margin-bottom: 0.65rem;
+      border: 1px solid rgba(10, 15, 26, 0.08);
+      overflow: hidden;
+    }
+    .faq-item summary {
+      padding: 1.1rem 1.25rem;
+      font-weight: 600;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after {
+      content: "+";
+      font-family: "Outfit", sans-serif;
+      font-size: 1.25rem;
+      color: var(--blue);
+      flex-shrink: 0;
+    }
+    .faq-item[open] summary::after { content: "−"; }
+    .faq-body {
+      padding: 0 1.25rem 1.15rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .cta-band {
+      background: linear-gradient(120deg, var(--ink) 0%, #1e3a5f 100%);
+      color: var(--white);
+      text-align: center;
+      padding: 3.5rem 1.25rem;
+    }
+    .cta-band h2 {
+      font-family: "Outfit", sans-serif;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      margin: 0 0 0.75rem;
+    }
+    .cta-band p { margin: 0 0 1.5rem; opacity: 0.9; max-width: 520px; margin-left: auto; margin-right: auto; }
+    .cta-band .hero-actions { justify-content: center; margin-bottom: 0; }
+
+    footer {
+      background: var(--ink);
+      color: rgba(255, 255, 255, 0.75);
+      padding: 3rem 1.25rem 2rem;
+      font-size: 0.9rem;
+    }
+    .footer-grid {
+      max-width: var(--max);
+      margin: 0 auto;
+      display: grid;
+      gap: 2rem;
+    }
+    @media (min-width: 768px) {
+      .footer-grid { grid-template-columns: 1.4fr 1fr 1fr 1fr; }
+    }
+    .footer-brand img { height: 44px; width: auto; margin-bottom: 0.85rem; }
+    .footer-col h3 {
+      font-family: "Outfit", sans-serif;
+      color: var(--amber);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin: 0 0 1rem;
+    }
+    .footer-col a {
+      display: block;
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+      margin-bottom: 0.45rem;
+    }
+    .footer-col a:hover { color: var(--white); }
+    .footer-bottom {
+      max-width: var(--max);
+      margin: 2.5rem auto 0;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--line);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.5);
+    }
+    .footer-bottom a { color: inherit; text-decoration: underline; }
+
+    .fab-phone {
+      position: fixed;
+      bottom: 1.25rem;
+      right: 1.25rem;
+      z-index: 90;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: var(--success);
+      color: var(--white);
+      display: grid;
+      place-items: center;
+      box-shadow: 0 10px 30px rgba(13, 159, 110, 0.45);
+      text-decoration: none;
+      animation: pulse-ring 2.5s ease-out infinite;
+    }
+    .fab-phone svg { width: 26px; height: 26px; }
+    @keyframes pulse-ring {
+      0% { box-shadow: 0 0 0 0 rgba(13, 159, 110, 0.45); }
+      70% { box-shadow: 0 0 0 14px rgba(13, 159, 110, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(13, 159, 110, 0); }
+    }
+
+    /* Preloader (fulger + goccia, bara 0–100%) */
+    body.is-loading { overflow: hidden; }
+    .page-loader {
+      position: fixed;
+      inset: 0;
+      z-index: 2147483000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1.5rem 4rem;
+      background: linear-gradient(145deg, #0a1628 0%, #0d1f3c 45%, #060d18 100%);
+      transition: opacity 0.55s ease, visibility 0.55s ease;
+    }
+    .page-loader::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        125deg,
+        transparent 0%,
+        transparent 42%,
+        rgba(100, 160, 255, 0.07) 50%,
+        transparent 58%,
+        transparent 100%
+      );
+      pointer-events: none;
+    }
+    .page-loader.is-hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+    .page-loader-icons {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(2rem, 8vw, 3.5rem);
+      margin-bottom: 2.25rem;
+    }
+    .page-loader-icon {
+      width: clamp(56px, 14vw, 80px);
+      height: clamp(56px, 14vw, 80px);
+      display: grid;
+      place-items: center;
+      animation: loader-icon-float 2.2s ease-in-out infinite;
+    }
+    .page-loader-icon--drop { animation-delay: 0.15s; }
+    @keyframes loader-icon-float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+    .page-loader-icon svg {
+      width: 100%;
+      height: 100%;
+    }
+    .page-loader-icon--bolt {
+      color: #ffd60a;
+      filter: drop-shadow(0 0 18px rgba(255, 214, 10, 0.85)) drop-shadow(0 0 36px rgba(255, 214, 10, 0.35));
+    }
+    .page-loader-icon--drop {
+      color: #1e8fff;
+      filter: drop-shadow(0 0 18px rgba(30, 143, 255, 0.85)) drop-shadow(0 0 38px rgba(30, 143, 255, 0.35));
+    }
+    .loader-bar-wrap {
+      position: relative;
+      z-index: 1;
+      width: min(320px, 88vw);
+      height: 10px;
+      border-radius: 999px;
+      background: #121820;
+      box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.45);
+      overflow: hidden;
+    }
+    .loader-bar-fill {
+      height: 100%;
+      width: 0%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, #1570ef 0%, #2b8cff 50%, #4da3ff 100%);
+      box-shadow: 0 0 16px rgba(45, 140, 255, 0.55);
+    }
+    .loader-pct {
+      position: relative;
+      z-index: 1;
+      margin-top: 1rem;
+      font-family: "Outfit", sans-serif;
+      font-size: 1.125rem;
+      font-weight: 600;
+      font-variant-numeric: tabular-nums;
+      color: #fff;
+      letter-spacing: 0.04em;
+    }
+    .loader-brand {
+      position: absolute;
+      bottom: 2rem;
+      left: 0;
+      right: 0;
+      text-align: center;
+      margin: 0;
+      font-family: "Outfit", sans-serif;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      letter-spacing: 0.28em;
+      color: #5a6b82;
+      text-transform: uppercase;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .fab-phone { animation: none; }
+      .card:hover { transform: none; }
+      .site-header,
+      .emergency-strip,
+      .hero-bg,
+      .hero-bg img,
+      .hero-overlay,
+      .hero-content > .hero-badge,
+      .hero-content > h1,
+      .hero-content > .hero-lead,
+      .hero-content > .hero-actions,
+      .hero-content > .trust-row {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+      }
+      .hero-bg img { transform: none !important; }
+      .reveal-on-scroll {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+      .page-loader {
+        display: none !important;
+      }
+      body.is-loading { overflow: auto; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HomeAndConstructionBusiness",
+    "name": "Ferari Impianti",
+    "description": "Pronto intervento elettrico e idraulico 24 ore su 24 a Modena, Bologna e zone limitrofe.",
+    "url": "https://ferariimpianti.lovable.app/",
+    "telephone": "+393926322720",
+    "email": "ferarimpianti@gmail.com",
+    "areaServed": [
+      { "@type": "City", "name": "Modena" },
+      { "@type": "City", "name": "Bologna" }
+    ],
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "00:00",
+      "closes": "23:59"
+    },
+    "sameAs": [
+      "https://www.facebook.com/ferarimpianti/",
+      "https://www.instagram.com/ferarimpianti/"
+    ]
+  }
+  </script>
+</head>
+<body>
+  <div class="page-loader" id="pageLoader" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Caricamento sito Ferari Impianti">
+    <div class="page-loader-icons">
+      <div class="page-loader-icon page-loader-icon--bolt" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+      </div>
+      <div class="page-loader-icon page-loader-icon--drop" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5c0 0-6.5 7.2-6.5 12.5a6.5 6.5 0 1013 0C18.5 9.7 12 2.5 12 2.5z"/></svg>
+      </div>
+    </div>
+    <div class="loader-bar-wrap">
+      <div class="loader-bar-fill" id="loaderBarFill"></div>
+    </div>
+    <div class="loader-pct" id="loaderPct">0%</div>
+    <p class="loader-brand">Ferari Impianti</p>
+  </div>
+
+  <a class="skip" href="#contenuto">Vai al contenuto</a>
+
+  <div class="emergency-strip" role="status">
+    <strong>Intervento urgente?</strong> Siamo operativi <strong>24/7</strong> anche nei festivi — 
+    <a href="tel:+393926322720">392 632 2720</a>
+  </div>
+
+  <header class="site-header" id="header">
+    <div class="header-inner">
+      <a class="brand" href="#top" aria-label="Ferari Impianti, home">
+        <img src="img/logo.png" width="120" height="48" alt="">
+        <div class="brand-text">
+          <span>FERARI</span>
+          <span>Impianti</span>
+        </div>
+      </a>
+
+      <nav class="nav-desktop" aria-label="Principale">
+        <a href="#servizi">Servizi</a>
+        <a href="#perche">Perché noi</a>
+        <a href="#zone">Zone</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contatti">Contatti</a>
+      </nav>
+
+      <div class="header-cta">
+        <div class="social-mini" aria-label="Social">
+          <a href="https://www.facebook.com/ferarimpianti/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/ferarimpianti/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zM17.5 6.5h.01"/></svg>
+          </a>
+        </div>
+        <a class="btn btn-primary" href="tel:+393926322720">392 632 2720</a>
+      </div>
+
+      <button type="button" class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="Apri menu">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-drawer" id="mobileDrawer" hidden>
+    <div class="mobile-drawer-backdrop" id="drawerBackdrop" tabindex="-1"></div>
+    <div class="mobile-panel" id="mobileNav" role="dialog" aria-modal="true" aria-label="Menu">
+      <div style="display:flex;justify-content:space-between;align-items:center;">
+        <span style="color:#fff;font-weight:700;">Menu</span>
+        <button type="button" class="menu-toggle" id="menuClose" aria-label="Chiudi menu" style="border-color:rgba(255,255,255,0.3);">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <nav class="mobile-nav" aria-label="Mobile">
+        <a href="#servizi">Servizi</a>
+        <a href="#perche">Perché noi</a>
+        <a href="#zone">Zone</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contatti">Contatti</a>
+      </nav>
+      <a class="btn btn-primary btn-block" href="tel:+393926322720">Chiama ora</a>
+      <a class="btn btn-ghost btn-block" href="https://wa.me/393926322720" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+
+  <main id="contenuto">
+    <div id="top"></div>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-bg">
+        <img src="img/hero.png" alt="" width="1920" height="1080" fetchpriority="high">
+        <div class="hero-overlay" aria-hidden="true"></div>
+      </div>
+      <div class="hero-content">
+        <p class="hero-badge">
+          <span aria-hidden="true">●</span> Pronto intervento certificato
+        </p>
+        <h1 id="hero-title">
+          Emergenze <span class="hl-e">elettriche</span> e <span class="hl-p">idrauliche</span>, risolte in fretta
+        </h1>
+        <p class="hero-lead">
+          Un unico interlocutore per casa e attività: tecnici strumentati, interventi in sicurezza e massima trasparenza su tempi e modalità. Operiamo su <strong>Modena</strong>, <strong>Bologna</strong> e hinterland.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="tel:+393926322720">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+            Chiama subito
+          </a>
+          <a class="btn btn-ghost" href="https://wa.me/393926322720" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        </div>
+        <div class="trust-row">
+          <div class="trust-pill">
+            <strong>24/7</strong>
+            <span>Anche notte e festivi</span>
+          </div>
+          <div class="trust-pill">
+            <strong>Emilia</strong>
+            <span>Modena · Bologna · provincia</span>
+          </div>
+          <div class="trust-pill">
+            <strong>Sicurezza</strong>
+            <span>Interventi a norma</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-alt" id="servizi" aria-labelledby="servizi-title">
+      <div class="section-head reveal-on-scroll">
+        <p class="section-kicker">Cosa facciamo</p>
+        <h2 id="servizi-title">Servizi pensati per le urgenze</h2>
+        <p>Dalla perdita d’acqua al quadro che salta: interventi mirati, diagnosi chiara e ripristino funzionale prima di tutto.</p>
+      </div>
+      <div class="container grid-3 reveal-stagger">
+        <article class="card reveal-on-scroll">
+          <div class="card-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          </div>
+          <h3>Elettrico d’emergenza</h3>
+          <p>Black-out, differenziali che scattano, odori di bruciato, prese a terra. Ricerca guasto e messa in sicurezza immediata.</p>
+        </article>
+        <article class="card reveal-on-scroll">
+          <div class="card-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/><path d="M12 2v6"/></svg>
+          </div>
+          <h3>Idraulico urgente</h3>
+          <p>Perdite, allagamenti, caldaia o scarichi ostruiti. Isoliamo il problema, limitiamo i danni e ripristiniamo il servizio.</p>
+        </article>
+        <article class="card reveal-on-scroll">
+          <div class="card-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+          </div>
+          <h3>Impianti civili</h3>
+          <p>Rifacimenti, adeguamenti, nuove linee e punti luce — con tracciabilità dei materiali e tempi concordati.</p>
+        </article>
+        <article class="card reveal-on-scroll">
+          <div class="card-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M2 20a8 8 0 018-8v6a8 8 0 01-8 8z"/><path d="M15 12a3 3 0 013-3V2a8 8 0 00-8 8"/></svg>
+          </div>
+          <h3>Impianti industriali</h3>
+          <p>Messi in servizio, manutenzioni programmate e interventi su macchinari per ridurre fermi macchina.</p>
+        </article>
+        <article class="card reveal-on-scroll">
+          <div class="card-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Diagnosi e consulenza</h3>
+          <p>Valutiamo cause ricorrenti (umidità, sovraccarichi, pressioni anomale) e proponiamo soluzioni durature.</p>
+        </article>
+        <article class="card reveal-on-scroll">
+          <div class="card-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <h3>Assistenza continuativa</h3>
+          <p>Per condomini, attività e seconda casa: referente unico e priorità in caso di allerta meteo o blackout.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="perche" aria-labelledby="perche-title">
+      <div class="section-head reveal-on-scroll">
+        <p class="section-kicker">Metodo</p>
+        <h2 id="perche-title">Perché ci scelgono quando scatta l’emergenza</h2>
+        <p>Chi chiama in urgenza ha bisogno di chiarezza, non di promesse vuote. Il nostro modo di lavorare è lineare e misurabile.</p>
+      </div>
+      <div class="container process reveal-stagger">
+        <div class="step reveal-on-scroll">
+          <div class="step-num">1</div>
+          <h3>Risposta immediata</h3>
+          <p>Capire la gravità della situazione al telefono e, se serve, guidarvi nelle prime azioni di sicurezza.</p>
+        </div>
+        <div class="step reveal-on-scroll">
+          <div class="step-num">2</div>
+          <h3>Arrivo organizzato</h3>
+          <p>Mezzo attrezzato e pezzi ricambio comuni per ridurre tempi morti sul posto.</p>
+        </div>
+        <div class="step reveal-on-scroll">
+          <div class="step-num">3</div>
+          <h3>Chiusura del cerchio</h3>
+          <p>Intervento documentato, spiegazione del guasto e — se necessario — piano per la messa a norma.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-alt" aria-labelledby="recensioni-title">
+      <div class="section-head reveal-on-scroll">
+        <p class="section-kicker">Reputazione</p>
+        <h2 id="recensioni-title">La voce di chi ci ha già chiamato</h2>
+      </div>
+      <div class="container">
+        <div class="reviews reveal-stagger">
+          <div class="review reveal-on-scroll">
+            <div class="stars" aria-label="5 stelle su 5">★★★★★</div>
+            <blockquote>“Intervento notturno per una perdita: arrivati in tempi brevi, professionali e ordinati.”</blockquote>
+            <cite>— Cliente, zona Modena</cite>
+          </div>
+          <div class="review reveal-on-scroll">
+            <div class="stars" aria-label="5 stelle su 5">★★★★★</div>
+            <blockquote>“Problema elettrico risolto senza tentativi inutili. Spiegazione chiara e prezzo coerente.”</blockquote>
+            <cite>— Cliente, provincia di Bologna</cite>
+          </div>
+        </div>
+        <div class="review-cta-wrap reveal-on-scroll">
+          <a class="btn btn-primary" href="https://g.co/kgs/pMwE8sp" target="_blank" rel="noopener noreferrer">Leggi tutte le recensioni su Google</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="zone" aria-labelledby="zone-title">
+      <div class="section-head reveal-on-scroll">
+        <p class="section-kicker">Territorio</p>
+        <h2 id="zone-title">Dove interveniamo</h2>
+        <p>Copertura su arterie principali e comuni dell’Appennino: se siete in dubbio, una telefonata basta per confermare.</p>
+      </div>
+      <div class="container">
+        <div class="areas-grid reveal-stagger" role="list">
+          <div class="area-chip reveal-on-scroll" role="listitem">Modena</div>
+          <div class="area-chip reveal-on-scroll" role="listitem">Bologna</div>
+          <div class="area-chip reveal-on-scroll" role="listitem">Terre di Castelli</div>
+          <div class="area-chip reveal-on-scroll" role="listitem">Appennino Modenese</div>
+          <div class="area-chip reveal-on-scroll" role="listitem">Appennino Bolognese</div>
+        </div>
+        <div style="margin-top:2.5rem;">
+          <div class="map-wrap reveal-on-scroll">
+            <iframe title="Mappa area Modena — Ferari Impianti" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d90508.83002488694!2d10.8257424!3d44.647128!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477fe3a96a3d6021%3A0xfd8d0ac2a9b52f9f!2sModena%2C%20Province%20of%20Modena!5e0!3m2!1sit!2sit!4v1700000000000!5m2!1sit!2sit"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-alt" id="faq" aria-labelledby="faq-title">
+      <div class="section-head reveal-on-scroll">
+        <p class="section-kicker">Domande frequenti</p>
+        <h2 id="faq-title">Prima di chiamare</h2>
+        <p>Risposte rapide alle richieste più comuni in emergenza.</p>
+      </div>
+      <div class="container reveal-stagger" style="max-width:720px;">
+        <details class="faq-item reveal-on-scroll">
+          <summary>Quanto tempo ci vuole per un intervento?</summary>
+          <div class="faq-body">Dipende dalla distanza e dall’urgenza. In fase di chiamata indichiamo una finestra temporale realistica e, se possibile, un orario stimato di arrivo.</div>
+        </details>
+        <details class="faq-item reveal-on-scroll">
+          <summary>Intervenite di notte e nei festivi?</summary>
+          <div class="faq-body">Sì, il servizio è pensato per essere reperibile 24 ore su 24, inclusi weekend e festivi, per emergenze elettriche e idrauliche.</div>
+        </details>
+        <details class="faq-item reveal-on-scroll">
+          <summary>Cosa devo fare in caso di perdita o odore di bruciato?</summary>
+          <div class="faq-body">Mettere in sicurezza: chiudere l’acqua in caso di perdita grave; staccare la corrente dal quadro generale se ci sono sintomi elettrici. Poi chiamateci per istruzioni mirate.</div>
+        </details>
+        <details class="faq-item reveal-on-scroll">
+          <summary>Fate preventivi per lavori programmati?</summary>
+          <div class="faq-body">Sì. Per interventi non urgenti possiamo concordare sopralluogo e preventivo scritto prima di iniziare i lavori.</div>
+        </details>
+      </div>
+    </section>
+
+    <div class="cta-band reveal-on-scroll" id="contatti">
+      <h2>Serve un tecnico adesso?</h2>
+      <p>Una chiamata attiva la procedura di emergenza: vi teniamo aggiornati fino all’arrivo sul posto.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="tel:+393926322720">392 632 2720</a>
+        <a class="btn btn-ghost" href="mailto:ferarimpianti@gmail.com">Email</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-col footer-brand">
+        <img src="img/logo.png" width="100" height="44" alt="Logo Ferari Impianti">
+        <p style="margin:0;line-height:1.6;">Pronto intervento elettrico e idraulico su Modena, Bologna e provincia. Professionalità, chiarezza e sicurezza in ogni intervento.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Contatti</h3>
+        <a href="tel:+393926322720">Tel. 392 632 2720</a>
+        <a href="mailto:ferarimpianti@gmail.com">ferarimpianti@gmail.com</a>
+      </div>
+      <div class="footer-col">
+        <h3>Social</h3>
+        <a href="https://www.facebook.com/ferarimpianti/" target="_blank" rel="noopener noreferrer">Facebook</a>
+        <a href="https://www.instagram.com/ferarimpianti/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://g.co/kgs/pMwE8sp" target="_blank" rel="noopener noreferrer">Recensioni Google</a>
+      </div>
+      <div class="footer-col">
+        <h3>Link utili</h3>
+        <a href="#servizi">Servizi</a>
+        <a href="#faq">FAQ</a>
+        <a href="#zone">Zone</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Ferari Impianti. Tutti i diritti riservati.</span>
+      <span><a href="#">Privacy</a> · <a href="#">Cookie</a></span>
+    </div>
+  </footer>
+
+  <a class="fab-phone" href="tel:+393926322720" aria-label="Chiama Ferari Impianti">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+  </a>
+
+  <script>
+    (function pageLoader() {
+      var loaderEl = document.getElementById("pageLoader");
+      var fill = document.getElementById("loaderBarFill");
+      var pctEl = document.getElementById("loaderPct");
+      var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      if (reduce) {
+        document.body.classList.add("show-site");
+        if (loaderEl) {
+          loaderEl.classList.add("is-hidden");
+          loaderEl.setAttribute("aria-hidden", "true");
+        }
+        return;
+      }
+
+      if (!loaderEl || !fill || !pctEl) {
+        document.body.classList.add("show-site");
+        return;
+      }
+
+      document.body.classList.add("is-loading");
+
+      var duration = 2800;
+      var start = null;
+
+      function easeOutCubic(t) {
+        return 1 - Math.pow(1 - t, 3);
+      }
+
+      function frame(now) {
+        if (start === null) start = now;
+        var t = Math.min(1, (now - start) / duration);
+        var p = Math.round(easeOutCubic(t) * 100);
+        fill.style.width = p + "%";
+        pctEl.textContent = p + "%";
+        loaderEl.setAttribute("aria-valuenow", String(p));
+
+        if (t < 1) {
+          requestAnimationFrame(frame);
+        } else {
+          fill.style.width = "100%";
+          pctEl.textContent = "100%";
+          loaderEl.setAttribute("aria-valuenow", "100");
+          document.body.classList.add("show-site");
+          document.body.classList.remove("is-loading");
+          loaderEl.classList.add("is-hidden");
+          loaderEl.setAttribute("aria-hidden", "true");
+        }
+      }
+
+      requestAnimationFrame(frame);
+    })();
+
+    (function () {
+      var header = document.getElementById("header");
+      var toggle = document.getElementById("menuToggle");
+      var closeBtn = document.getElementById("menuClose");
+      var drawer = document.getElementById("mobileDrawer");
+      var backdrop = document.getElementById("drawerBackdrop");
+      var yearEl = document.getElementById("year");
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+      function setDrawer(open) {
+        drawer.classList.toggle("is-open", open);
+        drawer.hidden = !open;
+        toggle.setAttribute("aria-expanded", open ? "true" : "false");
+        document.body.style.overflow = open ? "hidden" : "";
+      }
+
+      if (toggle) toggle.addEventListener("click", function () { setDrawer(true); });
+      if (closeBtn) closeBtn.addEventListener("click", function () { setDrawer(false); });
+      if (backdrop) backdrop.addEventListener("click", function () { setDrawer(false); });
+
+      drawer.querySelectorAll("a").forEach(function (a) {
+        a.addEventListener("click", function () { setDrawer(false); });
+      });
+
+      window.addEventListener("scroll", function () {
+        if (window.scrollY > 12) header.classList.add("is-scrolled");
+        else header.classList.remove("is-scrolled");
+      }, { passive: true });
+
+      var reduceMotionReveal = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      var revealNodes = document.querySelectorAll(".reveal-on-scroll");
+      if (reduceMotionReveal || !("IntersectionObserver" in window)) {
+        revealNodes.forEach(function (el) { el.classList.add("is-visible"); });
+      } else {
+        var io = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                io.unobserve(entry.target);
+              }
+            });
+          },
+          { root: null, rootMargin: "0px 0px -8% 0px", threshold: 0.08 }
+        );
+        revealNodes.forEach(function (el) { io.observe(el); });
+      }
+    })();
+  </script>
+</body>
+</html>
